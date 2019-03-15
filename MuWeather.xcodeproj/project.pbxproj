@@ -15,6 +15,7 @@
 		8427C791223C2C5000EAAD79 /* MuWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C790223C2C5000EAAD79 /* MuWeatherTests.swift */; };
 		8427C79C223C2C5000EAAD79 /* MuWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C79B223C2C5000EAAD79 /* MuWeatherUITests.swift */; };
 		8427C7B2223C3B0600EAAD79 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C7B1223C3B0600EAAD79 /* WeatherService.swift */; };
+		8427C7B4223C41E200EAAD79 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C7B3223C41E200EAAD79 /* Constants.swift */; };
 		D202D29C973704A2D05D812B /* Pods_MuWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9D9DEDB88444AEEE595CCC /* Pods_MuWeather.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		8427C79B223C2C5000EAAD79 /* MuWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuWeatherUITests.swift; sourceTree = "<group>"; };
 		8427C79D223C2C5000EAAD79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8427C7B1223C3B0600EAAD79 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		8427C7B3223C41E200EAAD79 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				8427C77B223C2C4900EAAD79 /* AppDelegate.swift */,
+				8427C7B3223C41E200EAAD79 /* Constants.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				8427C77E223C2C4900EAAD79 /* MainVC.swift in Sources */,
 				8427C7B2223C3B0600EAAD79 /* WeatherService.swift in Sources */,
 				8427C77C223C2C4900EAAD79 /* AppDelegate.swift in Sources */,
+				8427C7B4223C41E200EAAD79 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
