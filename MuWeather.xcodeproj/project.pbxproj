@@ -14,6 +14,7 @@
 		8427C786223C2C4F00EAAD79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8427C784223C2C4F00EAAD79 /* LaunchScreen.storyboard */; };
 		8427C791223C2C5000EAAD79 /* MuWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C790223C2C5000EAAD79 /* MuWeatherTests.swift */; };
 		8427C79C223C2C5000EAAD79 /* MuWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C79B223C2C5000EAAD79 /* MuWeatherUITests.swift */; };
+		D202D29C973704A2D05D812B /* Pods_MuWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9D9DEDB88444AEEE595CCC /* Pods_MuWeather.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0822538F0A53034CF7601257 /* Pods-MuWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuWeather.release.xcconfig"; path = "Target Support Files/Pods-MuWeather/Pods-MuWeather.release.xcconfig"; sourceTree = "<group>"; };
+		19EAF7A31A48447020616093 /* Pods-MuWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuWeather.debug.xcconfig"; path = "Target Support Files/Pods-MuWeather/Pods-MuWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		1C9D9DEDB88444AEEE595CCC /* Pods_MuWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8427C778223C2C4900EAAD79 /* MuWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8427C77B223C2C4900EAAD79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8427C77D223C2C4900EAAD79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D202D29C973704A2D05D812B /* Pods_MuWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50DE48F05F8F81DE50671AE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C9D9DEDB88444AEEE595CCC /* Pods_MuWeather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8427C76F223C2C4900EAAD79 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +94,8 @@
 				8427C78F223C2C5000EAAD79 /* MuWeatherTests */,
 				8427C79A223C2C5000EAAD79 /* MuWeatherUITests */,
 				8427C779223C2C4900EAAD79 /* Products */,
+				9E42A65BC431F5C2A0E7249D /* Pods */,
+				50DE48F05F8F81DE50671AE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +140,16 @@
 			path = MuWeatherUITests;
 			sourceTree = "<group>";
 		};
+		9E42A65BC431F5C2A0E7249D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19EAF7A31A48447020616093 /* Pods-MuWeather.debug.xcconfig */,
+				0822538F0A53034CF7601257 /* Pods-MuWeather.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8427C7A0223C2C5000EAAD79 /* Build configuration list for PBXNativeTarget "MuWeather" */;
 			buildPhases = (
+				A521E45F8C795F7366537F9E /* [CP] Check Pods Manifest.lock */,
 				8427C774223C2C4900EAAD79 /* Sources */,
 				8427C775223C2C4900EAAD79 /* Frameworks */,
 				8427C776223C2C4900EAAD79 /* Resources */,
+				A0268EE738EE755B2DC2B7B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +277,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A0268EE738EE755B2DC2B7B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuWeather/Pods-MuWeather-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuWeather/Pods-MuWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A521E45F8C795F7366537F9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8427C774223C2C4900EAAD79 /* Sources */ = {
@@ -430,6 +506,7 @@
 		};
 		8427C7A1223C2C5000EAAD79 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19EAF7A31A48447020616093 /* Pods-MuWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +525,7 @@
 		};
 		8427C7A2223C2C5000EAAD79 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0822538F0A53034CF7601257 /* Pods-MuWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
