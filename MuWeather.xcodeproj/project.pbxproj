@@ -14,6 +14,7 @@
 		8427C786223C2C4F00EAAD79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8427C784223C2C4F00EAAD79 /* LaunchScreen.storyboard */; };
 		8427C791223C2C5000EAAD79 /* MuWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C790223C2C5000EAAD79 /* MuWeatherTests.swift */; };
 		8427C79C223C2C5000EAAD79 /* MuWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C79B223C2C5000EAAD79 /* MuWeatherUITests.swift */; };
+		8427C7B2223C3B0600EAAD79 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C7B1223C3B0600EAAD79 /* WeatherService.swift */; };
 		D202D29C973704A2D05D812B /* Pods_MuWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9D9DEDB88444AEEE595CCC /* Pods_MuWeather.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		8427C797223C2C5000EAAD79 /* MuWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8427C79B223C2C5000EAAD79 /* MuWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuWeatherUITests.swift; sourceTree = "<group>"; };
 		8427C79D223C2C5000EAAD79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8427C7B1223C3B0600EAAD79 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				8427C7AE223C39D700EAAD79 /* Model */,
 				8427C7AD223C39D400EAAD79 /* View */,
 				8427C7AC223C39D200EAAD79 /* Controller */,
+				8427C7B0223C3ADE00EAAD79 /* Network */,
 				8427C7AB223C39CF00EAAD79 /* Extension */,
 				8427C7AA223C39CD00EAAD79 /* Util */,
 				8427C7A9223C39C500EAAD79 /* Resource */,
@@ -194,6 +197,14 @@
 				8427C784223C2C4F00EAAD79 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		8427C7B0223C3ADE00EAAD79 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8427C7B1223C3B0600EAAD79 /* WeatherService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		9E42A65BC431F5C2A0E7249D /* Pods */ = {
@@ -388,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8427C77E223C2C4900EAAD79 /* MainVC.swift in Sources */,
+				8427C7B2223C3B0600EAAD79 /* WeatherService.swift in Sources */,
 				8427C77C223C2C4900EAAD79 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
