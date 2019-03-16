@@ -13,7 +13,7 @@ class Weather {
     var windSpeed: Double
     var temperature: Int
     var humidity: Int
-    var pressure: Int
+    var pressure: Double
     var date: Date
     var iconString: String
     var locationDescription = ""
@@ -29,7 +29,7 @@ class Weather {
         return dateFormatter.string(from: date)
     }
     
-    init(description: String, windSpeed: Double, windDirection: String, temperature: Int, humidity: Int, pressure: Int, date: Date, iconString: String, city: String? = nil) {
+    init(description: String, windSpeed: Double, windDirection: String, temperature: Int, humidity: Int, pressure: Double, date: Date, iconString: String, city: String? = nil) {
         self.description = description
         self.windSpeed = windSpeed
         self.windDirection = windDirection

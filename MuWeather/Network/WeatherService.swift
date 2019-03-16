@@ -30,18 +30,26 @@ class WeatherService {
         })
     }
     
-    func decode(from data: Data) {
+    func decode(from data: Data) -> Weather? {
         do {
             let json = try JSON(data: data)
             if let weathers = json["consolidated_weather"].array {
                 for weather in weathers {
-                    if let weatherStateName = weather["weather_state_name"].string {
-                        print(weatherStateName)
+                    if let weatherStateName = weather["weather_state_name"].string,
+                        let iconString = weather["weather_state_abbr"].string,
+                        let windDirection = weather["wind_direction_compass"].string,
+                        let temperature = weather["the_temp"].double,
+                        let pressure = weather["air_pressure"].double,
+                        let humidity = weather["humidity"].int,
+                        let windSpeed = weather["wind_speed"].double {
+                        
+                        return Weather(description: weatherStateName, windSpeed: windSpeed, windDirection: windDirection, temperature: Int(temperature), humidity: humidity, pressure: pressure, date: Date(), iconString: iconString)
                     }
                 }
             }
         } catch {
             fatalError("Error getting data from Network")
         }
+        return nil
     }
 }
