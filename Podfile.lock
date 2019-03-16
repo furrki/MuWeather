@@ -9,7 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.2)
-  - RealmSwift (~> 3.13.1)
+  - RealmSwift
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -25,6 +25,6 @@ SPEC CHECKSUMS:
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 43cc445dfbd23b42d4e1a97e4b10a48d4db8911a
+PODFILE CHECKSUM: 74b2663ab8304210c3b1e6fd897775b7447a045e
 
 COCOAPODS: 1.6.0

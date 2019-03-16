@@ -18,6 +18,8 @@
 		8427C7B4223C41E200EAAD79 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C7B3223C41E200EAAD79 /* Constants.swift */; };
 		8427C7B6223C4F8000EAAD79 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C7B5223C4F8000EAAD79 /* Weather.swift */; };
 		8427C7B8223D654A00EAAD79 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C7B7223D654A00EAAD79 /* Number.swift */; };
+		8427C7BA223D76D300EAAD79 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C7B9223D76D300EAAD79 /* Location.swift */; };
+		848F7A19223D7D41000D68EE /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7A18223D7D41000D68EE /* RealmConfig.swift */; };
 		D202D29C973704A2D05D812B /* Pods_MuWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9D9DEDB88444AEEE595CCC /* Pods_MuWeather.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		8427C7B3223C41E200EAAD79 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8427C7B5223C4F8000EAAD79 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		8427C7B7223D654A00EAAD79 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		8427C7B9223D76D300EAAD79 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		848F7A18223D7D41000D68EE /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,7 @@
 			children = (
 				8427C77B223C2C4900EAAD79 /* AppDelegate.swift */,
 				8427C7B3223C41E200EAAD79 /* Constants.swift */,
+				848F7A18223D7D41000D68EE /* RealmConfig.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				8427C7B5223C4F8000EAAD79 /* Weather.swift */,
+				8427C7B9223D76D300EAAD79 /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -414,9 +420,11 @@
 				8427C77E223C2C4900EAAD79 /* MainVC.swift in Sources */,
 				8427C7B2223C3B0600EAAD79 /* WeatherService.swift in Sources */,
 				8427C7B8223D654A00EAAD79 /* Number.swift in Sources */,
+				848F7A19223D7D41000D68EE /* RealmConfig.swift in Sources */,
 				8427C77C223C2C4900EAAD79 /* AppDelegate.swift in Sources */,
 				8427C7B4223C41E200EAAD79 /* Constants.swift in Sources */,
 				8427C7B6223C4F8000EAAD79 /* Weather.swift in Sources */,
+				8427C7BA223D76D300EAAD79 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

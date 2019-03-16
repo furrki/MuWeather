@@ -9,3 +9,6 @@
 import Foundation
 
 var apiURL = "https://www.metaweather.com/api/location"
+
+let REALM_QUEUE = DispatchQueue(label: "RealmQueue")
+let REALM_LOCATION_CONFIG = "Location"
