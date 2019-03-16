@@ -10,9 +10,14 @@ import UIKit
 
 class MainVC: UIViewController {
     
+    @IBOutlet weak var locationTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        WeatherService.shared.getWeatherData(woeid: "839722")
+        
+    }
+    
+    @IBAction func addLocationButtonClicked(_ sender: Any) {
+        
     }
 }
