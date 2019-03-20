@@ -30,7 +30,23 @@ class MainVC: UIViewController {
     }
     
     @IBAction func addLocationButtonClicked(_ sender: Any) {
-        				
+        let alert = UIAlertController(title: "New Location", message: "Type a woeid", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "44418"
+        }
+        
+        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [weak alert] (_) in
+            let textField = alert!.textFields![0]
+            let woeid = textField.text!
+            WeatherService.shared.isValidWoeid(woeid: woeid, finish: { (success, cityName) in
+                if success {
+                    Location.insert(woeid: woeid, name: cityName!)
+                }
+            })
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -48,6 +64,8 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
 extension MainVC: LocationDelegate {
     func locationUpdated() {
-        locationTable.reloadData()
+        DispatchQueue.main.async {
+            self.locationTable.reloadData()
+        }
     }
 }
