@@ -6,7 +6,7 @@
 //  Copyright © 2019 furrki. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Alamofire
 import SwiftyJSON
 
@@ -22,6 +22,10 @@ class WeatherService {
         dateFormatter.dateFormat = "yyyy/M/d"
         let dateUrlPart = dateFormatter.string(from: date)
         return "\(apiURL)/\(woeid)/\(dateUrlPart)"
+    }
+    
+    func getIconUrl(for iconString: String) -> String {
+        return "https://www.metaweather.com/static/img/weather/png/64/\(iconString).png"
     }
     
     func isValidWoeid(woeid: String, finish: @escaping (_ isValid: Bool, _ cityName: String?) -> Void ) {
@@ -81,5 +85,13 @@ class WeatherService {
             return Weather(description: weatherStateName, windSpeed: windSpeed, windDirection: windDirection, temperature: Int(temperature), humidity: humidity, pressure: pressure, date: Date(), iconString: iconString)
         }
         return nil
+    }
+    
+    func getIcon(of weather: Weather, got: @escaping (_ icon: UIImage) -> Void) {
+        AF.request(getIconUrl(for: weather.iconString), method: .get)
+            .validate()
+            .responseData(completionHandler: { (responseData) in
+                got(UIImage(data: responseData.data!)!)
+            })
     }
 }

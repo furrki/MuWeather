@@ -21,13 +21,16 @@ class DaysVC: UIViewController {
         
         WeatherService.shared.getWeatherData(of: location.woeid) { (weathers) in
             self.weathers.append(contentsOf: weathers)
-            weathers.forEach({ (w) in
-                print(w.longDescription)
-            })
+            self.refreshTable()
         }
     }
     
-
+    func refreshTable() {
+        DispatchQueue.main.async {
+            self.daysTable.reloadData()
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -42,10 +45,12 @@ class DaysVC: UIViewController {
 
 extension DaysVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return weathers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = daysTable.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath) as! DayCell
+        cell.initialize(weather: weathers[indexPath.row])
+        return cell
     }
 }
