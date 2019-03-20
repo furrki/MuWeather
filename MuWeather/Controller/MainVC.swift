@@ -54,6 +54,7 @@ class MainVC: UIViewController {
         if (segue.identifier == "dayTableSegue") {
             let vc = segue.destination as! DaysVC
             let location = sender as! Location
+            vc.location = location
             vc.title = location.name
         }
     }

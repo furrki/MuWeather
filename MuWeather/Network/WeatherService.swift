@@ -44,31 +44,41 @@ class WeatherService {
         })
     }
     
-    func getWeatherData(woeid: String) {
+    func getWeatherData(of woeid: String, got: @escaping (_ weathers: [Weather]) -> Void ) {
         AF.request(getUrlFor(woeid: woeid)).responseJSON(completionHandler: { (res) in
-            self.decode(from: res.data!)
+            let weathers = self.getConsolidatedWeathers(from: res.data!)
+            got(weathers)
         })
     }
     
-    func decode(from data: Data) -> Weather? {
+    func getConsolidatedWeathers(from data: Data) -> [Weather] {
         do {
+            var weathers = [Weather]()
             let json = try JSON(data: data)
-            if let weathers = json["consolidated_weather"].array {
-                for weather in weathers {
-                    if let weatherStateName = weather["weather_state_name"].string,
-                        let iconString = weather["weather_state_abbr"].string,
-                        let windDirection = weather["wind_direction_compass"].string,
-                        let temperature = weather["the_temp"].double,
-                        let pressure = weather["air_pressure"].double,
-                        let humidity = weather["humidity"].int,
-                        let windSpeed = weather["wind_speed"].double {
-                        
-                        return Weather(description: weatherStateName, windSpeed: windSpeed, windDirection: windDirection, temperature: Int(temperature), humidity: humidity, pressure: pressure, date: Date(), iconString: iconString)
+            if let weatherDatas = json["consolidated_weather"].array {
+                for weather in weatherDatas {
+                    if let decodedWeather = decode(weather: weather) {
+                        weathers.append(decodedWeather)
                     }
                 }
             }
+            return weathers
         } catch {
             fatalError("Error getting data from Network")
+        }
+        return []
+    }
+    
+    func decode(weather: JSON) -> Weather? {
+        if let weatherStateName = weather["weather_state_name"].string,
+            let iconString = weather["weather_state_abbr"].string,
+            let windDirection = weather["wind_direction_compass"].string,
+            let temperature = weather["the_temp"].double,
+            let pressure = weather["air_pressure"].double,
+            let humidity = weather["humidity"].int,
+            let windSpeed = weather["wind_speed"].double {
+            
+            return Weather(description: weatherStateName, windSpeed: windSpeed, windDirection: windDirection, temperature: Int(temperature), humidity: humidity, pressure: pressure, date: Date(), iconString: iconString)
         }
         return nil
     }

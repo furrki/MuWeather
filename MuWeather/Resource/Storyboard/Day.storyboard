@@ -45,6 +45,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Iyp-ch-hRQ" id="H2Y-hl-aDE"/>
+                                    <outlet property="delegate" destination="Iyp-ch-hRQ" id="Kpt-BT-22D"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,6 +61,9 @@
                         <viewLayoutGuide key="safeArea" id="mnw-QI-slM"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="daysTable" destination="IPu-tD-Ltj" id="6Ya-YX-alI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtI-Ko-pYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

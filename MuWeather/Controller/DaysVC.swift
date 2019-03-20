@@ -10,10 +10,21 @@ import UIKit
 
 class DaysVC: UIViewController {
 
+    @IBOutlet weak var daysTable: UITableView!
+    var location: Location!
+    var weathers: [Weather] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        daysTable.delegate = self
+        daysTable.dataSource = self
+        
+        WeatherService.shared.getWeatherData(of: location.woeid) { (weathers) in
+            self.weathers.append(contentsOf: weathers)
+            weathers.forEach({ (w) in
+                print(w.longDescription)
+            })
+        }
     }
     
 
@@ -27,4 +38,14 @@ class DaysVC: UIViewController {
     }
     */
 
+}
+
+extension DaysVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
 }
