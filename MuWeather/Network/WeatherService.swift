@@ -62,7 +62,7 @@ class WeatherService {
             if let weatherDatas = json["consolidated_weather"].array {
                 for weather in weatherDatas {
                     if let decodedWeather = decode(weather: weather) {
-                        weathers.append(decodedWeather)
+                        weathers.insert(decodedWeather, at: 0)
                     }
                 }
             }
@@ -77,12 +77,15 @@ class WeatherService {
         if let weatherStateName = weather["weather_state_name"].string,
             let iconString = weather["weather_state_abbr"].string,
             let windDirection = weather["wind_direction_compass"].string,
+            let date = weather["applicable_date"].string,
             let temperature = weather["the_temp"].double,
             let pressure = weather["air_pressure"].double,
             let humidity = weather["humidity"].int,
+            let minTemp = weather["min_temp"].int,
+            let maxTemp = weather["max_temp"].int,
             let windSpeed = weather["wind_speed"].double {
             
-            return Weather(description: weatherStateName, windSpeed: windSpeed, windDirection: windDirection, temperature: Int(temperature), humidity: humidity, pressure: pressure, date: Date(), iconString: iconString)
+            return Weather(description: weatherStateName, windSpeed: windSpeed, windDirection: windDirection, temperature: Int(temperature), humidity: humidity, pressure: pressure, dateString: date, iconString: iconString, minTemp: minTemp, maxTemp: maxTemp)
         }
         return nil
     }
