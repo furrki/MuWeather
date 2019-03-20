@@ -24,6 +24,23 @@ class WeatherService {
         return "\(apiURL)/\(woeid)/\(dateUrlPart)"
     }
     
+    func isValidWoeid(woeid: String, finish: @escaping ((_ isValid: Bool) -> Void)) {
+        AF.request(getUrlFor(woeid: woeid)).responseJSON(completionHandler: { (res) in
+            do {
+                let json = try JSON(data: res.data!)
+                if let result = json["detail"].string {
+                    if result == "Not found." {
+                        finish(false)
+                        return
+                    }
+                }
+                finish(true)
+            } catch {
+                finish(false)
+            }
+        })
+    }
+    
     func getWeatherData(woeid: String) {
         AF.request(getUrlFor(woeid: woeid)).responseJSON(completionHandler: { (res) in
             self.decode(from: res.data!)

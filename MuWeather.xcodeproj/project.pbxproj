@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8419A8982242C3C0005C9FA1 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419A8972242C3C0005C9FA1 /* LocationCell.swift */; };
 		8427C77C223C2C4900EAAD79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C77B223C2C4900EAAD79 /* AppDelegate.swift */; };
 		8427C77E223C2C4900EAAD79 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C77D223C2C4900EAAD79 /* MainVC.swift */; };
 		8427C781223C2C4900EAAD79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8427C77F223C2C4900EAAD79 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		0822538F0A53034CF7601257 /* Pods-MuWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuWeather.release.xcconfig"; path = "Target Support Files/Pods-MuWeather/Pods-MuWeather.release.xcconfig"; sourceTree = "<group>"; };
 		19EAF7A31A48447020616093 /* Pods-MuWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuWeather.debug.xcconfig"; path = "Target Support Files/Pods-MuWeather/Pods-MuWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		1C9D9DEDB88444AEEE595CCC /* Pods_MuWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8419A8972242C3C0005C9FA1 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		8427C778223C2C4900EAAD79 /* MuWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8427C77B223C2C4900EAAD79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8427C77D223C2C4900EAAD79 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 				1C9D9DEDB88444AEEE595CCC /* Pods_MuWeather.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8419A8962242C3A4005C9FA1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8419A8972242C3C0005C9FA1 /* LocationCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8427C76F223C2C4900EAAD79 = {
@@ -192,6 +202,7 @@
 		8427C7AD223C39D400EAAD79 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8419A8962242C3A4005C9FA1 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -423,6 +434,7 @@
 				848F7A19223D7D41000D68EE /* RealmConfig.swift in Sources */,
 				8427C77C223C2C4900EAAD79 /* AppDelegate.swift in Sources */,
 				8427C7B4223C41E200EAAD79 /* Constants.swift in Sources */,
+				8419A8982242C3C0005C9FA1 /* LocationCell.swift in Sources */,
 				8427C7B6223C4F8000EAAD79 /* Weather.swift in Sources */,
 				8427C7BA223D76D300EAAD79 /* Location.swift in Sources */,
 			);
