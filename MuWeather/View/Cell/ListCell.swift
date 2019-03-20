@@ -1,5 +1,5 @@
 //
-//  LocationCell.swift
+//  ListCell.swift
 //  MuWeather
 //
 //  Created by Admin on 20.03.2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LocationCell: UITableViewCell {
+class ListCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -18,7 +18,6 @@ class LocationCell: UITableViewCell {
     }
     
     func initialize(location: Location) {
-        print(location.name)
         nameLabel.text = location.name
     }
 

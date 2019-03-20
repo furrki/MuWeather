@@ -25,6 +25,7 @@ class MainVC: UIViewController {
         
         locationTable.delegate = self
         locationTable.dataSource = self
+        locationTable.tableFooterView = UIView()
         Location.delegate = self
         Location.checkInitLocations()
     }
@@ -48,6 +49,14 @@ class MainVC: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "dayTableSegue") {
+            let vc = segue.destination as! DaysVC
+            let location = sender as! Location
+            vc.title = location.name
+        }
+    }
 }
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
@@ -56,9 +65,13 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = locationTable.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! LocationCell
+        let cell = locationTable.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! ListCell
         cell.initialize(location: locations[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "dayTableSegue", sender: locations[indexPath.row])
     }
 }
 
