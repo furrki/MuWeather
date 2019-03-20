@@ -22,7 +22,7 @@ class DayCell: UITableViewCell {
     }
     
     func initialize(weather: Weather) {
-        tempLabel.text = "\(weather.temperature)"
+        tempLabel.text = "\(weather.temperature)°C"
         stateLabel.text = weather.description
         dateLabel.text = weather.dateString
         WeatherService.shared.getIcon(of: weather) { (image) in

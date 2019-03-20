@@ -18,6 +18,7 @@ class DaysVC: UIViewController {
 
         daysTable.delegate = self
         daysTable.dataSource = self
+        daysTable.tableFooterView = UIView()
         
         WeatherService.shared.getWeatherData(of: location.woeid) { (weathers) in
             self.weathers.append(contentsOf: weathers)
