@@ -15,6 +15,5 @@ class RoundedView: UIView {
         
         layer.cornerRadius = 5.0
         layer.borderWidth = 5.0
-        
     }
 }

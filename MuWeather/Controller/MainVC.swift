@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class MainVC: UIViewController {
     
@@ -38,13 +39,23 @@ class MainVC: UIViewController {
         }
         
         alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [weak alert] (_) in
+            HUD.show(.progress)
+            
             let textField = alert!.textFields![0]
             let woeid = textField.text!
-            WeatherService.shared.isValidWoeid(woeid: woeid, finish: { (success, cityName) in
-                if success {
-                    Location.insert(woeid: woeid, name: cityName!)
-                }
-            })
+            if Reachability.shared.isConnectedToNetwork() {
+                WeatherService.shared.isValidWoeid(woeid: woeid, finish: { (success, cityName) in
+                    if success {
+                        Location.insert(woeid: woeid, name: cityName!)
+                        HUD.flash(.success)
+                    } else {
+                        HUD.flash(.labeledError(title: "Add Failed", subtitle: "Woeid not found."))
+                    }
+                })
+            } else {
+                
+                HUD.flash(.labeledError(title: "Add Failed", subtitle: "No Internet Connection."))
+            }
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))

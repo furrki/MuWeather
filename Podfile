@@ -5,7 +5,7 @@ target 'MuWeather' do
   pod 'Alamofire', '~> 5.0.0-beta.2'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'RealmSwift'
-
+  pod 'PKHUD'
 end
 
 post_install do |installer|
