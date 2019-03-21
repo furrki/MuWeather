@@ -13,6 +13,8 @@ class DaysVC: UIViewController {
     @IBOutlet weak var daysTable: UITableView!
     var location: Location!
     var weathers: [Weather] = []
+    var isLoading = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +24,7 @@ class DaysVC: UIViewController {
         
         WeatherService.shared.getWeatherData(of: location.woeid) { (weathers) in
             self.weathers.append(contentsOf: weathers)
+            self.isLoading = false
             self.refreshTable()
         }
     }
@@ -43,16 +46,25 @@ class DaysVC: UIViewController {
 
 extension DaysVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isLoading {
+            return 5
+        }
         return weathers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if isLoading {
+            return daysTable.dequeueReusableCell(withIdentifier: "loadingCell", for: indexPath)
+        }
+        
         let cell = daysTable.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath) as! DayCell
         cell.initialize(weather: weathers[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "dayDetailsSegue", sender: weathers[indexPath.row])
+        if weathers.count > 0 {
+            performSegue(withIdentifier: "dayDetailsSegue", sender: weathers[indexPath.row])
+        }
     }
 }
