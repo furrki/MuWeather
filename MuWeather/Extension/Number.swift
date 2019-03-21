@@ -9,6 +9,6 @@
 import Foundation
 extension Double {
     func limitDecimals() -> Double {
-        return Double((1000 * self).rounded()/1000)
+        return Double((10 * self).rounded()/10)
     }
 }

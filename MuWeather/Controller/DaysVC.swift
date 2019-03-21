@@ -36,6 +36,7 @@ class DaysVC: UIViewController {
         if let dayDetailVC = segue.destination as? DayDetailVC, let weather = sender as? Weather {
             dayDetailVC.location = location
             dayDetailVC.weather = weather
+            dayDetailVC.title = weather.dateString
         }
     }
 }
