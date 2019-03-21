@@ -50,8 +50,7 @@ class Location: Object {
         }
     }
     
-    static func checkInitLocations() {
-        print(Location.locationCount())
+    static func checkInitLocations() { 
         if Location.locationCount() == 0 {
             Location.insert(woeid: "839722", name: "Sofia")
             Location.insert(woeid: "2459115", name: "New York")

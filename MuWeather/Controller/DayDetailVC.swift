@@ -32,9 +32,9 @@ class DayDetailVC: UIViewController {
     }
     
     func loadWeather() {
-        WeatherService.shared.getIcon(of: weather) { (image) in
+        WeatherService.shared.getIcon(of: weather) { [weak self] (image) in
             DispatchQueue.main.async {
-                self.weatherIcon.image = image
+                self?.weatherIcon.image = image
             }
         }
         

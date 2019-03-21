@@ -49,7 +49,7 @@ class WeatherService {
     }
     
     func getWeatherData(of woeid: String, got: @escaping (_ weathers: [Weather]) -> Void ) {
-        AF.request(getUrlFor(woeid: woeid)).responseJSON(completionHandler: { (res) in
+        AF.request(getUrlFor(woeid: woeid)).responseJSON(completionHandler: { [unowned self] (res) in
             let weathers = self.getConsolidatedWeathers(from: res.data!)
             got(weathers)
         })

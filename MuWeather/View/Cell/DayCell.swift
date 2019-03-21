@@ -25,9 +25,9 @@ class DayCell: UITableViewCell {
         tempLabel.text = "\(weather.temperature)°C"
         stateLabel.text = weather.description
         dateLabel.text = weather.dateString
-        WeatherService.shared.getIcon(of: weather) { (image) in
+        WeatherService.shared.getIcon(of: weather) { [weak self] (image) in
             DispatchQueue.main.async {
-                self.iconImage.image = image
+                self?.iconImage.image = image
             }
         }
     }

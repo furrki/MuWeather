@@ -35,11 +35,11 @@ class DaysVC: UIViewController {
     }
     
     func setConnectionChecker() {
-        let checkConnectionBlock = {
+        let checkConnectionBlock = { [weak self] in
             if Reachability.shared.isConnectedToNetwork() {
-                self.connectionCheckTimer?.invalidate()
-                self.refreshTable()
-                self.getWeatherData()
+                self?.connectionCheckTimer?.invalidate()
+                self?.refreshTable()
+                self?.getWeatherData()
             }
         }
         
@@ -47,10 +47,10 @@ class DaysVC: UIViewController {
     }
     
     func getWeatherData() {
-        WeatherService.shared.getWeatherData(of: location.woeid) { (weathers) in
-            self.weathers.append(contentsOf: weathers)
-            self.isLoading = false
-            self.refreshTable()
+        WeatherService.shared.getWeatherData(of: location.woeid) { [weak self] (weathers) in
+            self?.weathers.append(contentsOf: weathers)
+            self?.isLoading = false
+            self?.refreshTable()
         }
     }
     
