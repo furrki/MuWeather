@@ -25,6 +25,7 @@
 		8427C7BA223D76D300EAAD79 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427C7B9223D76D300EAAD79 /* Location.swift */; };
 		848F7A19223D7D41000D68EE /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7A18223D7D41000D68EE /* RealmConfig.swift */; };
 		84A4885C2243FD5300859540 /* DayDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4885B2243FD5300859540 /* DayDetailVC.swift */; };
+		84A4885E224425E200859540 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4885D224425E200859540 /* Reachability.swift */; };
 		D202D29C973704A2D05D812B /* Pods_MuWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9D9DEDB88444AEEE595CCC /* Pods_MuWeather.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		8427C7B9223D76D300EAAD79 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		848F7A18223D7D41000D68EE /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 		84A4885B2243FD5300859540 /* DayDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailVC.swift; sourceTree = "<group>"; };
+		84A4885D224425E200859540 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				8427C77B223C2C4900EAAD79 /* AppDelegate.swift */,
 				8427C7B3223C41E200EAAD79 /* Constants.swift */,
 				848F7A18223D7D41000D68EE /* RealmConfig.swift */,
+				84A4885D224425E200859540 /* Reachability.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				8427C7B6223C4F8000EAAD79 /* Weather.swift in Sources */,
 				8427C7BA223D76D300EAAD79 /* Location.swift in Sources */,
 				8419A89E2242E309005C9FA1 /* DayCell.swift in Sources */,
+				84A4885E224425E200859540 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

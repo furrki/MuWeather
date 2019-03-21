@@ -14,6 +14,11 @@ class DaysVC: UIViewController {
     var location: Location!
     var weathers: [Weather] = []
     var isLoading = true
+    var connectionCheckTimer: Timer?
+    
+    deinit {
+        connectionCheckTimer?.invalidate()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +27,26 @@ class DaysVC: UIViewController {
         daysTable.dataSource = self
         daysTable.tableFooterView = UIView()
         
+        if Reachability.shared.isConnectedToNetwork() {
+            getWeatherData()
+        } else {
+            setConnectionChecker()
+        }
+    }
+    
+    func setConnectionChecker() {
+        let checkConnectionBlock = {
+            if Reachability.shared.isConnectedToNetwork() {
+                self.connectionCheckTimer?.invalidate()
+                self.refreshTable()
+                self.getWeatherData()
+            }
+        }
+        
+        connectionCheckTimer = Timer.scheduledTimer(timeInterval: 2.0, target: BlockOperation(block: checkConnectionBlock), selector: #selector(Operation.main), userInfo: nil, repeats: true)
+    }
+    
+    func getWeatherData() {
         WeatherService.shared.getWeatherData(of: location.woeid) { (weathers) in
             self.weathers.append(contentsOf: weathers)
             self.isLoading = false
@@ -46,13 +71,24 @@ class DaysVC: UIViewController {
 
 extension DaysVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if !Reachability.shared.isConnectedToNetwork() {
+            return 1
+        }
+        
         if isLoading {
             return 5
         }
+        
         return weathers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if !Reachability.shared.isConnectedToNetwork() {
+            return daysTable.dequeueReusableCell(withIdentifier: "noInternetCell", for: indexPath)
+        }
+        
         if isLoading {
             return daysTable.dequeueReusableCell(withIdentifier: "loadingCell", for: indexPath)
         }
