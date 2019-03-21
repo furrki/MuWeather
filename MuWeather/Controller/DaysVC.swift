@@ -9,13 +9,13 @@
 import UIKit
 
 class DaysVC: UIViewController {
-
+    
     @IBOutlet weak var daysTable: UITableView!
     var location: Location!
     var weathers: [Weather] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         daysTable.delegate = self
         daysTable.dataSource = self
         daysTable.tableFooterView = UIView()
@@ -32,16 +32,12 @@ class DaysVC: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let dayDetailVC = segue.destination as? DayDetailVC, let weather = sender as? Weather {
+            dayDetailVC.location = location
+            dayDetailVC.weather = weather
+        }
     }
-    */
-
 }
 
 extension DaysVC: UITableViewDelegate, UITableViewDataSource {
@@ -53,5 +49,9 @@ extension DaysVC: UITableViewDelegate, UITableViewDataSource {
         let cell = daysTable.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath) as! DayCell
         cell.initialize(weather: weathers[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "dayDetailsSegue", sender: weathers[indexPath.row])
     }
 }

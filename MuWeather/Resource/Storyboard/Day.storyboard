@@ -29,7 +29,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="125.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z9y-cg-2Et">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Precipitation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9y-cg-2Et">
                                                     <rect key="frame" x="15" y="33" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="S8Q-Hv-4ck"/>
@@ -37,7 +37,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9M-au-MSd">
-                                                    <rect key="frame" x="315.66666666666669" y="52.333333333333336" width="35.333333333333314" height="21.000000000000007"/>
+                                                    <rect key="frame" x="354.66666666666669" y="52.333333333333336" width="35.333333333333314" height="21.000000000000007"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="8YZ-Fz-Eui"/>
                                                     </constraints>
@@ -46,7 +46,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LwP-Mh-g5K">
-                                                    <rect key="frame" x="128.33333333333334" y="41" width="118.66666666666666" height="44"/>
+                                                    <rect key="frame" x="147.66666666666666" y="41" width="118.66666666666666" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day/Month/Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO3-e5-Ko7">
                                                             <rect key="frame" x="0.0" y="0.0" width="118.66666666666667" height="18"/>
@@ -107,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="-35" y="182"/>
         </scene>
-        <!--View Controller-->
+        <!--Day DetailVC-->
         <scene sceneID="C0j-sW-uwh">
             <objects>
-                <viewController id="3Dk-qj-Vp0" sceneMemberID="viewController">
+                <viewController id="3Dk-qj-Vp0" customClass="DayDetailVC" customModule="MuWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IFj-Mz-KSR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,4 +129,7 @@
             <point key="canvasLocation" x="757" y="182"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Precipitation" width="30" height="30"/>
+    </resources>
 </document>
