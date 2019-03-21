@@ -254,7 +254,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TBu-RU-Zol">
                                         <rect key="frame" x="0.33333333333334281" y="122.00000000000003" width="373" height="65.666666666666657"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFv-0N-YVC" userLabel="Seperator">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFv-0N-YVC" userLabel="Seperator" customClass="RoundedView" customModule="MuWeather" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="1"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -307,7 +307,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2h-Fh-GFk" userLabel="Seperator">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2h-Fh-GFk" userLabel="Seperator" customClass="RoundedView" customModule="MuWeather" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="64.666666666666629" width="373" height="1"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>

@@ -46,9 +46,8 @@ class MainVC: UIViewController {
                 }
             })
         }))
+        
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
-        
-        
         
         self.present(alert, animated: true, completion: nil)
     }
