@@ -1,6 +1,8 @@
 # Mu Weather
 Mu Weather Application provides you weather forecast of next 6 days. You can add new locations for tracking with woeid. 
 
+This application works on iOS >= 10.3. This project is written with Swift 4.2.
+
 # Installation
 
 ```
