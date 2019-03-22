@@ -13,7 +13,6 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var locationTable: UITableView!
     
-    
     var locations: [Location] {
         if let locationObjects = Location.getLocations() {
             return Array(locationObjects)
