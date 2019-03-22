@@ -10,9 +10,9 @@ pod install
 ```
 
 # Screenshots
-![Alt text](Screenshots/ss1.PNG?raw=true "List Cities")
-![Alt text](Screenshots/ss2.PNG?raw=true "List Forecast")
-![Alt text](Screenshots/sse.PNG?raw=true "Weather Details")
+![Alt text](Screenshots/ss1.png?raw=true "List Cities")
+![Alt text](Screenshots/ss2.png?raw=true "List Forecast")
+![Alt text](Screenshots/ss3.png?raw=true "Weather Details")
 
 # Author
 furrki -- furkankaynary@gmail.com
