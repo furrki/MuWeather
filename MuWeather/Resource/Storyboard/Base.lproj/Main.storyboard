@@ -39,6 +39,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Uba-pZ-qDX" secondAttribute="trailing" constant="10" id="7KL-wa-Whl"/>
                                                 <constraint firstItem="Uba-pZ-qDX" firstAttribute="leading" secondItem="lbo-xi-1ny" secondAttribute="leadingMargin" constant="10" id="Wio-uR-m19"/>
                                                 <constraint firstItem="Uba-pZ-qDX" firstAttribute="centerY" secondItem="lbo-xi-1ny" secondAttribute="centerY" id="ygN-hx-a4f"/>
                                             </constraints>
