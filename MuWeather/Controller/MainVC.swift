@@ -42,7 +42,7 @@ class MainVC: UIViewController {
             
             let textField = alert!.textFields![0]
             let woeid = textField.text!
-            if Reachability.shared.isConnectedToNetwork() {
+            if Reachability.isConnectedToNetwork() {
                 WeatherService.shared.isValidWoeid(woeid: woeid, finish: { (success, cityName) in
                     if success {
                         Location.insert(woeid: woeid, name: cityName!)

@@ -19,7 +19,6 @@ class DayDetailVC: UIViewController {
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    
     @IBOutlet weak var windSpeedLabel: UILabel!
     @IBOutlet weak var windDirectionLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!

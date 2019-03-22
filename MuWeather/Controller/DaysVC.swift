@@ -27,7 +27,7 @@ class DaysVC: UIViewController {
         daysTable.dataSource = self
         daysTable.tableFooterView = UIView()
         
-        if Reachability.shared.isConnectedToNetwork() {
+        if Reachability.isConnectedToNetwork() {
             getWeatherData()
         } else {
             setConnectionChecker()
@@ -36,7 +36,7 @@ class DaysVC: UIViewController {
     
     func setConnectionChecker() {
         let checkConnectionBlock = { [weak self] in
-            if Reachability.shared.isConnectedToNetwork() {
+            if Reachability.isConnectedToNetwork() {
                 self?.connectionCheckTimer?.invalidate()
                 self?.refreshTable()
                 self?.getWeatherData()
@@ -72,7 +72,7 @@ class DaysVC: UIViewController {
 extension DaysVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if !Reachability.shared.isConnectedToNetwork() {
+        if !Reachability.isConnectedToNetwork() {
             return 1
         }
         
@@ -85,7 +85,7 @@ extension DaysVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if !Reachability.shared.isConnectedToNetwork() {
+        if !Reachability.isConnectedToNetwork() {
             return daysTable.dequeueReusableCell(withIdentifier: "noInternetCell", for: indexPath)
         }
         
